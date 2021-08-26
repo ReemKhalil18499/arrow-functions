@@ -191,7 +191,7 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+ console.log(Student.courseName());
 
 
 
@@ -202,7 +202,7 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+ console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
@@ -211,9 +211,8 @@ Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//If there isn’t a non-arrow function scope surrounding, the this context will be, in the browser, the global window object.
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//The this context will be, in the browser, the global window object.
 // 3. Explain why "this" is different when an arrow function is used.
-//
-// --
+//The value of this is the same as the this of the enclosing scope (the surrounding non-arrow function).arrow functions retain the this value of the enclosing functional scope. Therefore, you will want to avoid using an arrow function in a constructor (where we need the contextual this to be the object we are building) or any method that needs to use this to behave properly.
